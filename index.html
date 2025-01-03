@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I LOVE YOU!</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Typing effect */
+    .typing {
+      font-family: 'Courier New', Courier, monospace;
+      border-right: 2px solid #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 4s steps(40, end), blink 0.5s step-end infinite alternate;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      from {
+        border-color: transparent;
+      }
+      to {
+        border-color: #fff;
+      }
+    }
+
+    /* 3D animation */
+    .cube {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(45deg, #ff9f9f, #ff6fff);
+      animation: rotate 5s linear infinite;
+      transform-style: preserve-3d;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotateX(0deg) rotateY(0deg);
+      }
+      to {
+        transform: rotateX(360deg) rotateY(360deg);
+      }
+    }
+
+    /* Confetti animation */
+    @keyframes confetti {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+
+    .confetti {
+      position: fixed;
+      top: 0;
+      left: calc(50% - 5px);
+      width: 10px;
+      height: 10px;
+      background-color: #ff69b4;
+      animation: confetti 5s linear infinite;
+    }
+
+    .confetti:nth-child(2) {
+      left: calc(50% + 20px);
+      background-color: #ffd700;
+      animation-delay: 0.5s;
+    }
+
+    .confetti:nth-child(3) {
+      left: calc(50% - 50px);
+      background-color: #00ced1;
+      animation-delay: 1s;
+    }
+
+    .confetti:nth-child(4) {
+      left: calc(50% + 100px);
+      background-color: #9acd32;
+      animation-delay: 1.5s;
+    }
+
+    /* Photo card hover effect */
+    .photo-card:hover {
+      transform: scale(1.1) rotate(3deg);
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center">
+
+  <!-- Confetti -->
+  <div class="confetti"></div>
+  <div class="confetti"></div>
+  <div class="confetti"></div>
+  <div class="confetti"></div>
+
+  <!-- Header -->
+  <header class="text-center">
+    <h1 class="text-4xl md:text-6xl font-extrabold text-pink-500">🎉 To My Dearest Love 💖</h1>
+    <p class="mt-4 text-lg md:text-xl text-gray-300">
+      <i>"You are the heart of my world and the brightest light in my life."</i>
+    </p>
+  </header>
+
+  <!-- Typing Effect -->
+  <section class="mt-12">
+    <div class="text-2xl md:text-3xl typing mx-auto text-center text-pink-300">
+      Thank you for being my inspiration, my strength, and my greatest joy. Every day, I celebrate YOU and the love you bring into my life
+    </div>
+  </section>
+
+  <!-- 3D Cube -->
+  <section class="mt-12 flex justify-center">
+    <div class="cube"></div>
+  </section>
+
+  <!-- Heartfelt Message -->
+  <section class="mt-12 max-w-xl text-center">
+    <p class="text-lg md:text-xl">
+      "I love you more than words can ever express!" 💖
+    </p>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="py-16">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-pink-400">🌟 Cherished Moments 🌟</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 max-w-5xl mx-auto px-4">
+      <!-- Photo Card 1 -->
+      <div class="photo-card group relative shadow-lg rounded-lg overflow-hidden transition-all duration-300 transform">
+        <img src="photo1.jpeg" alt="Photo 1" class="w-full h-64 object-cover rounded-lg">
+        <p class="absolute bottom-4 left-4 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 p-2 rounded">MAMA ❤️</p>
+      </div>
+      <!-- Photo Card 2 -->
+      <div class="photo-card group relative shadow-lg rounded-lg overflow-hidden transition-all duration-300 transform">
+        <img src="photo3.jpeg" alt="Photo 2" class="w-full h-64 object-cover rounded-lg">
+        <p class="absolute bottom-4 left-4 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 p-2 rounded">MY HERO ❤️</p>
+      </div>
+      <!-- Photo Card 3 -->
+      <div class="photo-card group relative shadow-lg rounded-lg overflow-hidden transition-all duration-300 transform">
+        <img src="photo2.jpeg" alt="Photo 3" class="w-full h-64 object-cover rounded-lg">
+        <p class="absolute bottom-4 left-4 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 p-2 rounded">BABY ❤️</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="relative mt-12 text-center">
+    <p class="text-sm text-gray-400">&copy; 2024 - Made with ❤️ by Salim Ajibola</p>
+  </footer>
+
+  <script>
+    // Typing effect loop
+    const typingText = document.querySelector('.typing');
+    const phrases = [
+      'Thank you for being my inspiration, my strength,',
+      'and my greatest joy. Every day, I celebrate YOU and',
+      'the love you bring into my life💖',
+    ];
+
+    let i = 0;
+
+    function typeEffect() {
+      typingText.textContent = '';
+      let j = 0;
+      const interval = setInterval(() => {
+        typingText.textContent += phrases[i][j];
+        j++;
+        if (j >= phrases[i].length) {
+          clearInterval(interval);
+          setTimeout(() => {
+            i = (i + 1) % phrases.length;
+            typeEffect();
+          }, 2000); // Pause before next phrase
+        }
+      }, 100);
+    }
+
+    typeEffect();
+  </script>
+</body>
+</html>
